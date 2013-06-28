@@ -28,3 +28,6 @@ fi
 # Install Ruby
 rvm install 2.0.0
 rvm --default use 2.0.0
+
+# Install soloist (chef-solo)
+sudo gem install soloist
