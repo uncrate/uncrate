@@ -6,3 +6,6 @@ version          '0.1.0'
 supports         'Linux'
 
 depends 'java'
+depends 'maven_temp'
+
+depends 'germinator_base'

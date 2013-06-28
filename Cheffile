@@ -2,4 +2,9 @@ site 'http://community.opscode.com/api/v1'
 
 cookbook 'java'
 
+cookbook 'maven_temp', 
+	:git => 'git://github.com/johnlcox/maven_temp.git'
+
+cookbook 'germinator_base', :path => './germinator_base'
 cookbook 'germinator_linux_apps', :path => './germinator_linux_apps'
+cookbook 'germinator_ubuntu_base', :path => './germinator_ubuntu_base'

@@ -1,0 +1,1 @@
+default['germinator']['current_user'] = nil

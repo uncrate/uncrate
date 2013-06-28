@@ -1,4 +1,4 @@
 germinator
 ==========
 
-`wget -O - https://raw.github.com/johnlcox/germinator/dev/germinate.sh | bash`
+`wget -O - https://raw.github.com/johnlcox/germinator/master/germinate.sh | bash`
