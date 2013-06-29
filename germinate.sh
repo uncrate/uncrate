@@ -18,8 +18,8 @@ sudo apt-get install build-essential git-core curl
 
 # Install RVM
 if ! hash rvm &>/dev/null ; then
-  bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
-	echo  '[[ -s "~/.rvm/scripts/rvm" ]] && . "~/.rvm/scripts/rvm"  # Load RVM into a shell session *as a function*' >> "$HOME/.bashrc"
+	bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
+	echo  '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # Load RVM into a shell session *as a function*' >> "$HOME/.bashrc"
 
 	source ~/.rvm/scripts/rvm
 	source ~/.bashrc
