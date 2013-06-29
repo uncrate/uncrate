@@ -1,2 +1,2 @@
 recipes:
-- intellij
+- germinator-linux-apps::intellij
