@@ -39,6 +39,11 @@ echo -e "Installing Ruby\n"
 rvm install 2.0.0
 rvm --default use 2.0.0
 
-# Install soloist (chef-solo)
-echo -e "Installing soloist\n"
-gem install soloist
+# Install bundler
+echo -e "Installing bundler"
+gem install bundler
+
+# Bundle and execute soloist
+echo -e "Running soloist"
+bundle
+bundle exec soloist
