@@ -36,8 +36,8 @@ fi
 
 # Install Ruby
 echo -e "Installing Ruby\n"
-rvm install 2.0.0
-rvm --default use 2.0.0
+rvm install 1.9.3
+rvm --default use 1.9.3
 
 # Install bundler
 echo -e "Installing bundler"
