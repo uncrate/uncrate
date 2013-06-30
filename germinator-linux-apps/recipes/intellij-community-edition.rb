@@ -14,12 +14,9 @@ script "install_intellij_community_edition" do
   cwd "/tmp/"
   code <<-EOH
   rm -rf /opt/intellij-ce
-  mkdir /opt/intellij-ce
-  cd /opt/intellij-ce
   wget #{intellij_mirror_site}
   tar -zxvf #{intellij_file}
-  find . -maxdepth 1 -name "idea-IC*" -type d | head -1 | xargs -i sudo ln -s {} idea-IC
-  rm -rf idea-IC*.tar.gz
+  mv -R #{intellij_file} /opt/intellij-ce
   EOH
-  only_if do ! File.exists?("/opt/intellij-ce/idea-IC/bin/idea.sh") end
+  only_if do ! File.exists?("/opt/intellij-ce/bin/idea.sh") end
 end
