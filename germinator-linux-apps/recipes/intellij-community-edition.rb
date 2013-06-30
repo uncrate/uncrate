@@ -16,7 +16,7 @@ script "install_intellij_community_edition" do
   rm -rf /opt/intellij-ce
   wget #{intellij_mirror_site}
   tar -zxvf #{intellij_file}
-  mv -R #{intellij_file} /opt/intellij-ce
+  mv -r #{intellij_file} /opt/intellij-ce
   EOH
   only_if do ! File.exists?("/opt/intellij-ce/bin/idea.sh") end
 end
