@@ -43,6 +43,13 @@ rvm --default use 2.0.0
 echo -e "Installing bundler"
 gem install bundler
 
+if [[ -d germinator ]]; then
+  cd germinator && git pull
+else
+  git clone https://github.com/johnlcox/germinator.git
+  cd germinator && git checkout dev
+fi
+
 # Bundle and execute soloist
 echo -e "Running soloist"
 bundle
