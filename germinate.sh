@@ -14,20 +14,31 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-sudo apt-get install build-essential git-core curl
+if [ "$(whoami)" = "root" ]; then
+	echo -e "Run script as a non-root user and without sudo\n"
+	exit 1
+fi
+
+export DEBIAN_FRONTEND=noninteractive
+sudo apt-get update
+sudo apt-get -q -y install build-essential git-core curl
 
 # Install RVM
 if ! hash rvm &>/dev/null ; then
+	echo -e "Installing RVM\n"
 	bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
-	echo  '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # Load RVM into a shell session *as a function*' >> "$HOME/.bashrc"
+	echo  '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >> "$HOME/.bashrc"
 
+	echo -e "Sourcing RVM\n"
 	source ~/.rvm/scripts/rvm
 	source ~/.bashrc
 fi
 
 # Install Ruby
+echo -e "Installing Ruby\n"
 rvm install 2.0.0
 rvm --default use 2.0.0
 
 # Install soloist (chef-solo)
-sudo gem install soloist
+echo -e "Installing soloist\n"
+gem install soloist
