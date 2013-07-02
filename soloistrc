@@ -1,2 +1,3 @@
 recipes:
+- java::openjdk
 - germinator-linux-apps::intellij-community-edition
