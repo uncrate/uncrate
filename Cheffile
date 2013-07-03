@@ -2,4 +2,4 @@ site 'http://community.opscode.com/api/v1'
 
 cookbook 'java'
 
-cookbook 'germinator-linux-apps', :path => './germinator-linux-apps'
+cookbook 'germinator_linux_apps', :path => './germinator_linux_apps'
