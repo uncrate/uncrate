@@ -15,6 +15,7 @@ bash "extract_intellij_community_edition" do
   code <<-EOH
     mkdir -p #{intellij_extract_path}
     tar zxf #{intellij_tar_filename} -C #{intellij_extract_path}
+    mkdir -p #{node[:intellij_community_edition][:install_path]}
     mv #{intellij_extract_path}/*/* #{node[:intellij_community_edition][:install_path]}/
   EOH
 
