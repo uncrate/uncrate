@@ -1,6 +1,6 @@
-template "/usr/share/applications/intellij-ce.desktop" do
-	source "intellij-community-edition.desktop.erb"
-	cookbook "germinator-linux-apps"
+template "/usr/share/applications/#{node[:intellij_community_edition_shortcut_name]}.desktop" do
+	source "intellij_community_edition.desktop.erb"
+	cookbook "germinator_linux_apps"
 	owner node['current_user']
 	mode "0777"
 end
