@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=IntelliJ IDEA Community Edition
+Name[En]=<%=node[:intellij_community_edition][:shortcut_name]%>
+Comment=Free Java, Groovy, Scala and Android application development
+Exec=<%= node[:intellij_community_edition][:install_path] %>/bin/idea.sh
+Path=<%= node[:intellij_community_edition][:install_path] %>/bin
+Terminal=false
+Icon=<%= node[:intellij_community_edition][:install_path] %>/bin/idea.png
+Type=Application
+Categories=Development;IDE;
