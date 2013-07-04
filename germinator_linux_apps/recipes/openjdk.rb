@@ -1,1 +1,1 @@
-include_recipe "java::openjdk"
+include_recipe "java"
