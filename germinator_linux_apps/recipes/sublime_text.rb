@@ -14,7 +14,7 @@ bash "extract_sublime_text" do
   cwd ::File.dirname(sublime_text_tar_filepath)
   code <<-EOH
     mkdir -p #{sublime_text_extract_path}
-    tar zxf #{sublime_text_tar_filename} -C #{sublime_text_extract_path}
+    tar jxvf #{sublime_text_tar_filename} -C #{sublime_text_extract_path}
     mkdir -p #{node['sublime_text']['install_path']}
     mv #{sublime_text_extract_path}/*/* #{node['sublime_text']['install_path']}/
   EOH
