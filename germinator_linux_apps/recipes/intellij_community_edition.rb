@@ -1,6 +1,6 @@
 intellij_tar_filename = File.basename(node['intellij_community_edition']['download_url'])
-intellij_tar_filepath = "#{Chef::Config['file_cach_path']}/#{intellij_tar_filename}"
-intellij_extract_path = "#{Chef::Config['file_cach_path']}/intellij_community_edition/#{node['intellij_community_edition']['checksum']}"
+intellij_tar_filepath = "#{Chef::Config['file_cache_path']}/#{intellij_tar_filename}"
+intellij_extract_path = "#{Chef::Config['file_cache_path']}/intellij_community_edition/#{node['intellij_community_edition']['checksum']}"
 
 remote_file intellij_tar_filepath do
   source node['intellij_community_edition']['download_url']

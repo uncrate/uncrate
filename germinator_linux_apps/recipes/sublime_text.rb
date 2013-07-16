@@ -1,6 +1,6 @@
 sublime_text_tar_filename = File.basename(node['sublime_text']['download_url'])
-sublime_text_tar_filepath = "#{Chef::Config['file_cach_path']}/#{sublime_text_tar_filename}"
-sublime_text_extract_path = "#{Chef::Config['file_cach_path']}/sublime_text/#{node['sublime_text']['checksum']}"
+sublime_text_tar_filepath = "#{Chef::Config['file_cache_path']}/#{sublime_text_tar_filename}"
+sublime_text_extract_path = "#{Chef::Config['file_cache_path']}/sublime_text/#{node['sublime_text']['checksum']}"
 
 remote_file sublime_text_tar_filepath do
   source node['sublime_text']['download_url']
