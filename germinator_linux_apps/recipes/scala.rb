@@ -16,7 +16,7 @@ bash "extract scala" do
   code <<-EOH
     mkdir -p #{scala_extract_path}
     tar zxf #{scala_tar_filename} -C #{scala_extract_path}
-    mkdir -p #{node['scala']['install_path']}
+    mkdir -p #{scala_install_path}
     mv #{scala_extract_path}/* #{scala_install_path}
   EOH
 
