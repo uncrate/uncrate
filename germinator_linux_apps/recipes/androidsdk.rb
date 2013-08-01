@@ -37,7 +37,7 @@ end
 if node['android_sdk']['include_tools']
   package = 'tools'
   execute "Install android package #{package}" do
-    command "echo \"y\" | #{android_sdk_install_path}/tools/android update sdk -u --all --filter #{package}"
+    command "echo \"y\" | #{android_sdk_install_path}/tools/android update sdk -u --filter #{package}"
     user node['germinator']['current_user']
     group node['germinator']['current_user']
   end
@@ -46,7 +46,7 @@ end
 if node['android_sdk']['include_platform_tools']
   package = 'platform-tools'
   execute "Install android package #{package}" do
-    command "echo \"y\" | #{android_sdk_install_path}/tools/android update sdk -u --all --filter #{package}"
+    command "echo \"y\" | #{android_sdk_install_path}/tools/android update sdk -u --filter #{package}"
     user node['germinator']['current_user']
     group node['germinator']['current_user']
   end
@@ -71,7 +71,7 @@ if node['android_sdk']['include_platform']
   versions.each do |android_version|
     package = "android-#{android_version}"
     execute "Install android package #{package}" do
-      command "echo \"y\" | #{android_sdk_install_path}/tools/android update sdk -u --all --filter #{package}"
+      command "echo \"y\" | #{android_sdk_install_path}/tools/android update sdk -u --filter #{package}"
       user node['germinator']['current_user']
       group node['germinator']['current_user']
     end
@@ -82,7 +82,7 @@ if node['android_sdk']['include_add_ons']
   versions.each do |android_version|
     package = "addon-google_apis-google-#{android_version}"
     execute "Install android package #{package}" do
-      command "echo \"y\" | #{android_sdk_install_path}/tools/android update sdk -u --all --filter #{package}"
+      command "echo \"y\" | #{android_sdk_install_path}/tools/android update sdk -u --filter #{package}"
       user node['germinator']['current_user']
       group node['germinator']['current_user']
     end
