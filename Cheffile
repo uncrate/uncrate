@@ -5,6 +5,6 @@ cookbook 'java'
 cookbook 'maven_temp', 
 	:git => 'git://github.com/johnlcox/maven_temp.git'
 
-cookbook 'germinator_base', :path => './germinator_base'
-cookbook 'germinator_linux_apps', :path => './germinator_linux_apps'
-cookbook 'germinator_ubuntu_base', :path => './germinator_ubuntu_base'
+cookbook 'uncrate_base', :path => './uncrate_base'
+cookbook 'uncrate_linux_apps', :path => './uncrate_linux_apps'
+cookbook 'uncrate_ubuntu_base', :path => './uncrate_ubuntu_base'

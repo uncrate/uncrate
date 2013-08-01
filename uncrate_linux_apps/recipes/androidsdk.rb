@@ -18,7 +18,7 @@ bash "extract android_sdk" do
     tar zxf #{android_sdk_tar_filename} -C #{android_sdk_extract_path}
     mkdir -p #{android_sdk_install_path}
     mv #{android_sdk_extract_path}/*/* #{android_sdk_install_path}
-    chown -R #{node['germinator']['current_user']}:#{node['germinator']['current_user']} #{android_sdk_install_path}
+    chown -R #{node['uncrate']['user']}:#{node['uncrate']['user']} #{android_sdk_install_path}
   EOH
 
   not_if { ::File.exists?(android_sdk_install_path)}
@@ -38,8 +38,8 @@ if node['android_sdk']['include_tools']
   package = 'tools'
   execute "Install android package #{package}" do
     command "echo \"y\" | #{android_sdk_install_path}/tools/android update sdk -u --filter #{package}"
-    user node['germinator']['current_user']
-    group node['germinator']['current_user']
+    user node['uncrate']['user']
+    group node['uncrate']['user']
   end
 end
 
@@ -47,8 +47,8 @@ if node['android_sdk']['include_platform_tools']
   package = 'platform-tools'
   execute "Install android package #{package}" do
     command "echo \"y\" | #{android_sdk_install_path}/tools/android update sdk -u --filter #{package}"
-    user node['germinator']['current_user']
-    group node['germinator']['current_user']
+    user node['uncrate']['user']
+    group node['uncrate']['user']
   end
 end
 
@@ -56,8 +56,8 @@ if node['android_sdk']['include_build_tools']
   package = 'build-tools'
   execute "Install android package #{package}" do
     command "echo \"y\" | #{android_sdk_install_path}/tools/android update sdk -u --all --filter #{package}"
-    user node['germinator']['current_user']
-    group node['germinator']['current_user']
+    user node['uncrate']['user']
+    group node['uncrate']['user']
   end
 end
 
@@ -72,8 +72,8 @@ if node['android_sdk']['include_platform']
     package = "android-#{android_version}"
     execute "Install android package #{package}" do
       command "echo \"y\" | #{android_sdk_install_path}/tools/android update sdk -u --filter #{package}"
-      user node['germinator']['current_user']
-      group node['germinator']['current_user']
+      user node['uncrate']['user']
+      group node['uncrate']['user']
     end
   end
 end
@@ -83,8 +83,8 @@ if node['android_sdk']['include_add_ons']
     package = "addon-google_apis-google-#{android_version}"
     execute "Install android package #{package}" do
       command "echo \"y\" | #{android_sdk_install_path}/tools/android update sdk -u --filter #{package}"
-      user node['germinator']['current_user']
-      group node['germinator']['current_user']
+      user node['uncrate']['user']
+      group node['uncrate']['user']
     end
   end
 end
@@ -94,8 +94,8 @@ if node['android_sdk']['include_docs']
     package = "doc-#{android_version}"
     execute "Install android package #{package}" do
       command "echo \"y\" | #{android_sdk_install_path}/tools/android update sdk -u --all --filter #{package}"
-      user node['germinator']['current_user']
-      group node['germinator']['current_user']
+      user node['uncrate']['user']
+      group node['uncrate']['user']
     end
   end
 end
@@ -105,8 +105,8 @@ if node['android_sdk']['include_source']
     package = "source-#{android_version}"
     execute "Install android package #{package}" do
       command "echo \"y\" | #{android_sdk_install_path}/tools/android update sdk -u --all --filter #{package}"
-      user node['germinator']['current_user']
-      group node['germinator']['current_user']
+      user node['uncrate']['user']
+      group node['uncrate']['user']
     end
   end
 end
@@ -116,8 +116,8 @@ if node['android_sdk']['include_system_image']
     package = "sysimg-#{android_version}"
     execute "Install android package #{package}" do
       command "echo \"y\" | #{android_sdk_install_path}/tools/android update sdk -u --all --filter #{package}"
-      user node['germinator']['current_user']
-      group node['germinator']['current_user']
+      user node['uncrate']['user']
+      group node['uncrate']['user']
     end
   end
 end
@@ -127,8 +127,8 @@ if node['android_sdk']['include_sample']
     package = "sample-#{android_version}"
     execute "Install android package #{package}" do
       command "echo \"y\" | #{android_sdk_install_path}/tools/android update sdk -u --all --filter #{package}"
-      user node['germinator']['current_user']
-      group node['germinator']['current_user']
+      user node['uncrate']['user']
+      group node['uncrate']['user']
     end
   end
 end

@@ -43,11 +43,11 @@ rvm --default use 1.9.3
 echo -e "Installing bundler"
 gem install bundler
 
-if [[ -d germinator ]]; then
-  cd germinator && git pull
+if [[ -d uncrate ]]; then
+  cd uncrate && git pull
 else
-  git clone https://github.com/johnlcox/germinator.git
-  cd germinator && git checkout master
+  git clone https://github.com/johnlcox/uncrate.git
+  cd uncrate && git checkout master
 fi
 
 # Bundle and execute soloist

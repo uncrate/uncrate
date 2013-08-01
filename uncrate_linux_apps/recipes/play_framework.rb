@@ -1,4 +1,4 @@
-include_recipe "germinator_linux_apps::unzip"
+include_recipe "uncrate_linux_apps::unzip"
 
 play_tar_filename = File.basename(node['play']['download_url'])
 play_tar_filepath = "#{Chef::Config['file_cache_path']}/#{play_tar_filename}"
@@ -20,7 +20,7 @@ bash "extract play" do
     unzip #{play_tar_filename} -d #{play_extract_path}
     mkdir -p #{play_install_path}
     mv #{play_extract_path}/*/* #{play_install_path}
-    chown -R #{node['germinator']['current_user']}:#{node['germinator']['current_user']} #{play_install_path}
+    chown -R #{node['uncrate']['user']}:#{node['uncrate']['user']} #{play_install_path}
   EOH
 
   not_if { ::File.exists?(play_install_path)}

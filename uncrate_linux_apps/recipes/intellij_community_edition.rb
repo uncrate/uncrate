@@ -24,7 +24,7 @@ end
 
 template "/usr/share/applications/#{node['intellij_community_edition']['shortcut_name']}.desktop" do
   source "intellij_community_edition.desktop.erb"
-  cookbook "germinator_linux_apps"
+  cookbook "uncrate_linux_apps"
   owner node['current_user']
   mode "0755"
 end

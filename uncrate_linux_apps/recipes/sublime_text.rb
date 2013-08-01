@@ -24,7 +24,7 @@ end
 
 template "/usr/share/applications/#{node['sublime_text']['shortcut_name']}.desktop" do
   source "sublime_text.desktop.erb"
-  cookbook "germinator_linux_apps"
+  cookbook "uncrate_linux_apps"
   owner node['current_user']
   mode "0755"
 end

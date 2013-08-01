@@ -1,11 +1,11 @@
-name             'germinator_linux_apps'
+name             'uncrate_linux_apps'
 maintainer       'John Leacox'
 license          'Apache 2'
-description      'Installs/Configures germinator_linux_apps'
+description      'Installs/Configures uncrate_linux_apps'
 version          '0.1.0'
 supports         'Linux'
 
 depends 'java'
 depends 'maven_temp'
 
-depends 'germinator_base'
+depends 'uncrate_base'

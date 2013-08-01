@@ -1,8 +1,0 @@
-recipes:
-- germinator_ubuntu_base
-- germinator_linux_apps::openjdk
-- germinator_linux_apps::intellij_community_edition
-- germinator_linux_apps::kdiff3
-- germinator_linux_apps::mongodb
-- germinator_linux_apps::vim
-- germinator_linux_apps::oh_my_zsh
