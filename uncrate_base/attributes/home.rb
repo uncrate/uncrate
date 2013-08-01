@@ -1,1 +1,0 @@
-default['uncrate']['user'] = nil
