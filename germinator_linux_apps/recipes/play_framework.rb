@@ -19,7 +19,7 @@ bash "extract play" do
     mkdir -p #{play_extract_path}
     unzip #{play_tar_filename} -d #{play_extract_path}
     mkdir -p #{play_install_path}
-    mv #{play_extract_path}/* #{play_install_path}
+    mv #{play_extract_path}/*/* #{play_install_path}
     chown -R #{node['germinator']['current_user']}:#{node['germinator']['current_user']} #{play_install_path}
   EOH
 
