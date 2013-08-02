@@ -8,16 +8,17 @@ node.default['uncrate']['user_home'] = node['etc']['passwd'][node['uncrate']['us
 template "#{node['uncrate']['home']}/env.sh" do
   source "env.sh.erb"
   owner node['uncrate']['user']
+  group node['uncrate']['user']
   mode "0755"
 end
 
-directory default['uncrate']['home'] do
+directory node['uncrate']['home'] do
   owner node['uncrate']['user']
   group node['uncrate']['user']
   mode "0755"
 end
 
-directory default['uncrate']['envdir'] do
+directory node['uncrate']['envdir'] do
   owner node['uncrate']['user']
   group node['uncrate']['user']
   mode "0755"
