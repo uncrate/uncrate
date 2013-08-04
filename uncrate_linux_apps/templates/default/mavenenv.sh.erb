@@ -1,5 +1,5 @@
-export M2_HOME=<%=node['maven']['symlink_path']%>
-export MAVEN_HOME=<%=node['maven']['symlink_path']%>
-export M2=<%=node['maven']['symlink_path']%>/bin
+export M2_HOME=<%=node['maven']['install_path']%>/<%=node['maven']['symlink_dir']%>
+export MAVEN_HOME=<%=node['maven']['install_path']%>/<%=node['maven']['symlink_dir']%>
+export M2=<%=node['maven']['install_path']%>/<%=node['maven']['symlink_dir']%>/bin
 
 PATH=$M2:$PATH
