@@ -1,27 +1,49 @@
+# android_sdk_tar_filename = File.basename(node['android_sdk']['download_url'])
+# android_sdk_tar_filepath = "#{Chef::Config['file_cache_path']}/#{android_sdk_tar_filename}"
+# android_sdk_extract_path = "#{Chef::Config['file_cache_path']}/android_sdk/#{node['android_sdk']['checksum']}"
+# android_sdk_install_path = "#{node['android_sdk']['install_dir']}/#{File.basename(android_sdk_tar_filename, '.*')}"
+
+# remote_file android_sdk_tar_filepath do
+#   source node['android_sdk']['download_url']
+#   checksum node['android_sdk']['checksum']
+#   owner "root"
+#   group "root"
+#   mode "0644"
+# end
+
+# bash "extract android_sdk" do
+#   cwd ::File.dirname(android_sdk_tar_filepath)
+#   code <<-EOH
+#     mkdir -p #{android_sdk_extract_path}
+#     tar zxf #{android_sdk_tar_filename} -C #{android_sdk_extract_path}
+#     mkdir -p #{android_sdk_install_path}
+#     mv #{android_sdk_extract_path}/*/* #{android_sdk_install_path}
+#     chown -R #{node['uncrate']['user']}:#{node['uncrate']['user']} #{android_sdk_install_path}
+#   EOH
+
+#   not_if { ::File.exists?(android_sdk_install_path)}
+# end
+
 android_sdk_tar_filename = File.basename(node['android_sdk']['download_url'])
 android_sdk_tar_filepath = "#{Chef::Config['file_cache_path']}/#{android_sdk_tar_filename}"
 android_sdk_extract_path = "#{Chef::Config['file_cache_path']}/android_sdk/#{node['android_sdk']['checksum']}"
-android_sdk_install_path = "#{node['android_sdk']['install_dir']}/#{File.basename(android_sdk_tar_filename, '.*')}"
+android_sdk_install_path = "#{node['android_sdk']['install_path']}/#{node['android_sdk']['install_dir']}"
 
-remote_file android_sdk_tar_filepath do
-  source node['android_sdk']['download_url']
+include_recipe "ark"
+
+ark node['android_sdk']['install_dir'] do
+  url node['android_sdk']['download_url']
+  path node['android_sdk']['install_path']
   checksum node['android_sdk']['checksum']
-  owner "root"
-  group "root"
-  mode "0644"
+  owner node['uncrate']['user']
+  group node['uncrate']['user']
+  mode 0755
+  action :put
 end
 
-bash "extract android_sdk" do
-  cwd ::File.dirname(android_sdk_tar_filepath)
-  code <<-EOH
-    mkdir -p #{android_sdk_extract_path}
-    tar zxf #{android_sdk_tar_filename} -C #{android_sdk_extract_path}
-    mkdir -p #{android_sdk_install_path}
-    mv #{android_sdk_extract_path}/*/* #{android_sdk_install_path}
-    chown -R #{node['uncrate']['user']}:#{node['uncrate']['user']} #{android_sdk_install_path}
-  EOH
-
-  not_if { ::File.exists?(android_sdk_install_path)}
+template "#{node['uncrate']['envdir']}/androidsdk.sh" do
+  source "androidsdkenv.sh.erb"
+  mode "0755"
 end
 
 # ark "#{android_sdk_tar_filename}" do

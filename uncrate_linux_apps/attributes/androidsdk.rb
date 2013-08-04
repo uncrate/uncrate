@@ -1,6 +1,7 @@
 default['android_sdk']['download_url']="http://dl.google.com/android/android-sdk_r22.0.4-linux.tgz"
 default['android_sdk']['checksum']="3eec3c2accfb90d8344d29ed7e80fdf59ea0eecfed3535a7c78116ace5b522e7"
-default['android_sdk']['install_dir']="/opt"
+default['android_sdk']['install_path']="/opt"
+default['android_sdk']['install_dir']="android-sdk"
 
 default['android_sdk']['include_tools'] = true
 default['android_sdk']['include_platform_tools'] = true
