@@ -23,7 +23,7 @@ directory node['uncrate']['envdir'] do
   mode "0755"
 end
 
-case platform
+case node['platform']
 when "debian", "ubuntu"
   include_recipe "ubuntu_base"
 when "centos, redhat"
