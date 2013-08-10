@@ -25,6 +25,6 @@ end
 
 case platform
 when "debian", "ubuntu"
-  include_recipe "apt"
+  include_recipe "ubuntu_base"
 when "centos, redhat"
 end
