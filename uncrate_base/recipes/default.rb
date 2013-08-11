@@ -25,6 +25,6 @@ end
 
 case node['platform']
 when "debian", "ubuntu"
-  include_recipe "ubuntu_base"
+  include_recipe "uncrate_base::ubuntu_base"
 when "centos, redhat"
 end
