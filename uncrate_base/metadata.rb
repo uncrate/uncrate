@@ -14,3 +14,4 @@ version          '0.1.0'
 end
 
 depends "apt"
+depends "yum"
