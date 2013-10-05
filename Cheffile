@@ -1,10 +1,3 @@
 site 'http://community.opscode.com/api/v1'
 
-cookbook 'java'
-
-cookbook 'maven_temp', 
-	:git => 'git://github.com/johnlcox/maven_temp.git'
-
 cookbook 'uncrate_base', :path => './uncrate_base'
-cookbook 'uncrate_linux_apps', :path => './uncrate_linux_apps'
-cookbook 'uncrate_ubuntu_base', :path => './uncrate_ubuntu_base'
