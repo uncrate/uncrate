@@ -4,4 +4,4 @@ directory "/usr/local" do
   recursive true
 end
 
-include_recipe "homebrew"
+include_recipe "homebrewalt"
